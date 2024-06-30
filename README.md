@@ -1,5 +1,18 @@
-# Getting Started with Create React App
+# Bayesian Calculator
 
+这是一个部署在GitHub Page的计算器工具，使用贝叶斯公式来计算某个信念为真的后验概率。
+
+用户只需要估算三个数值：
+1. 先验概率P(H)，也就是在出现新的证据之前，我们内心对命题H的先验主观信念。
+2. 证据可能性P(E|H)（也叫边缘概率），也就是假设命题H为真，证据E出现的可能性。
+3. 证伪项P(E|H')，也就是假设命题H不为真，证据E出现的可能性。
+
+本计算器会帮你计算出后验概率 P(H|E),也就是当出现新证据E时，我们内心对于命题H的后验主观信念。
+目前仅支持一轮计算。
+
+本计算公式和解读内容，来自“认真想”社群主理人李万中老师。
+
+---
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
