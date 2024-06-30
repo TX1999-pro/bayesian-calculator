@@ -19,23 +19,18 @@ function BayesianCalculator() {
         return 0; // 如果全概率为0，则后验概率不可计算
     };
 
-    const updateValue = (value) => {
-        if (value < 0) {
-            return 0.00000001;
-        }
-        if (value > 1) {
-            return 0.99999999;
-        }
-        return value;
+    const handleInputChange = (setter) => (event) => {
+        const value = parseFloat(event.target.value);
+        setter(value >= 0 && value <= 1 ? value : 1.0);
     };
 
     return (
         <div>
             <h1>贝叶斯后验概率计算器</h1>
+
             <div>
                 <p>针对命题H,和新证据E, 请你估测以下概率: </p>
                 <label className="先验概率">
-                    先验概率 P(H):
                     <input
                         type="number"
                         value={prior}
@@ -43,12 +38,23 @@ function BayesianCalculator() {
                         min="0"
                         max="1"
                         step="0.01"
-                        onChange={e => setPrior(updateValue(parseFloat(e.target.value)))}
+                        onChange={handleInputChange(setPrior)}
                     />
                 </label>
+                <label className="先验概率">
+                    <input
+                        type="range"
+                        value={prior}
+                        min="0"
+                        max="1"
+                        step="0.001"
+                        onChange={handleInputChange(setPrior)}
+                    />
+                    - 先验概率 P(H)
+                </label>
+
                 <br />
                 <label className="证据可能性">
-                    证据可能性 P(E|H):
                     <input
                         type="number"
                         value={likelihood}
@@ -56,12 +62,22 @@ function BayesianCalculator() {
                         min="0"
                         max="1"
                         step="0.01"
-                        onChange={e => setLikelihood(updateValue(parseFloat(e.target.value)))}
+                        onChange={e => handleInputChange(setLikelihood)}
                     />
+                </label>
+                <label className="证据可能性">
+                    <input
+                        type="range"
+                        value={likelihood}
+                        min="0"
+                        max="1"
+                        step="0.001"
+                        onChange={handleInputChange(setLikelihood)}
+                    />
+                    - 证据可能性 P(E|H)
                 </label>
                 <br />
                 <label className="证伪项">
-                    证伪项 P(E|H'):
                     <input
                         type="number"
                         value={falseLikelihood}
@@ -69,8 +85,19 @@ function BayesianCalculator() {
                         min="0"
                         max="1"
                         step="0.01"
-                        onChange={e => setFalseLikelihood(updateValue(parseFloat(e.target.value)))}
+                        onChange={handleInputChange(setFalseLikelihood)}
                     />
+                </label>
+                <label className="证伪项">
+                    <input
+                        type="range"
+                        value={falseLikelihood}
+                        min="0"
+                        max="1"
+                        step="0.01"
+                        onChange={handleInputChange(setFalseLikelihood)}
+                    />
+                    - 证伪项 P(E|H')
                 </label>
             </div>
             <hr />
