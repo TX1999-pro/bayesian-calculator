@@ -62,7 +62,7 @@ function BayesianCalculator() {
                         min="0"
                         max="1"
                         step="0.01"
-                        onChange={e => handleInputChange(setLikelihood)}
+                        onChange={handleInputChange(setLikelihood)}
                     />
                 </label>
                 <label className="证据可能性">
