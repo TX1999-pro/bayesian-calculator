@@ -1,38 +1,25 @@
-.App {
-  text-align: center;
+div {
+     white-space: pre-wrap;
+}
+/* 定义参数名称的样式 */
+.先验概率 {
+  color: blue;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.证据可能性 {
+  color: rgb(197, 29, 189);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.证伪项 {
+  color: rgb(255, 16, 8);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.result {
+    display: inline;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 定义全概率和后验概率计算结果的样式 */
+.calculation,
+.calculation-result {
+  color: rgb(0, 0, 0);
 }
