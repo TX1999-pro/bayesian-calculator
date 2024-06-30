@@ -19,6 +19,16 @@ function BayesianCalculator() {
         return 0; // 如果全概率为0，则后验概率不可计算
     };
 
+    const updateValue = (value) => {
+        if (value < 0) {
+            return 0.00000001;
+        }
+        if (value > 1) {
+            return 0.99999999;
+        }
+        return value;
+    };
+
     return (
         <div>
             <h1>贝叶斯后验概率计算器</h1>
@@ -29,11 +39,11 @@ function BayesianCalculator() {
                     <input
                         type="number"
                         value={prior}
-                        className="先验概率"
+                        className="先验概率 inputbox"
                         min="0"
                         max="1"
                         step="0.01"
-                        onChange={e => setPrior(parseFloat(e.target.value))}
+                        onChange={e => setPrior(updateValue(parseFloat(e.target.value)))}
                     />
                 </label>
                 <br />
@@ -42,11 +52,11 @@ function BayesianCalculator() {
                     <input
                         type="number"
                         value={likelihood}
-                        className="证据可能性"
+                        className="证据可能性 inputbox"
                         min="0"
                         max="1"
                         step="0.01"
-                        onChange={e => setLikelihood(parseFloat(e.target.value))}
+                        onChange={e => setLikelihood(updateValue(parseFloat(e.target.value)))}
                     />
                 </label>
                 <br />
@@ -55,11 +65,11 @@ function BayesianCalculator() {
                     <input
                         type="number"
                         value={falseLikelihood}
-                        className="证伪项"
+                        className="证伪项 inputbox"
                         min="0"
                         max="1"
                         step="0.01"
-                        onChange={e => setFalseLikelihood(parseFloat(e.target.value))}
+                        onChange={e => setFalseLikelihood(updateValue(parseFloat(e.target.value)))}
                     />
                 </label>
             </div>

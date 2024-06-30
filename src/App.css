@@ -1,6 +1,14 @@
 div {
      white-space: pre-wrap;
 }
+.inputbox {
+  display: inline;
+  width: 150px; /* Set this to whatever width suits your layout */
+  text-align: right;
+  margin-right: 10px; /* Space between the label and the input or next element */
+  vertical-align: middle; /* Aligns text vertically centered if needed */
+}
+
 /* 定义参数名称的样式 */
 .先验概率 {
   color: blue;
