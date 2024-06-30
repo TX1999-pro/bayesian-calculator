@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/bayesian-calculator/static/css/main.85614b89.css",
-    "main.js": "/bayesian-calculator/static/js/main.3f67ceee.js",
+    "main.js": "/bayesian-calculator/static/js/main.6a0b3258.js",
     "index.html": "/bayesian-calculator/index.html",
     "main.85614b89.css.map": "/bayesian-calculator/static/css/main.85614b89.css.map",
-    "main.3f67ceee.js.map": "/bayesian-calculator/static/js/main.3f67ceee.js.map"
+    "main.6a0b3258.js.map": "/bayesian-calculator/static/js/main.6a0b3258.js.map"
   },
   "entrypoints": [
     "static/css/main.85614b89.css",
-    "static/js/main.3f67ceee.js"
+    "static/js/main.6a0b3258.js"
   ]
 }
