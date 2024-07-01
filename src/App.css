@@ -9,6 +9,52 @@ div {
   vertical-align: middle; /* Aligns text vertically centered if needed */
 }
 
+/* CSS for SessionTabs component */
+.sessionTabsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    overflow-x: auto; /* Allows horizontal scrolling for many tabs */
+}
+
+.addButton {
+    margin-right: 20px; /* Space between add button and first tab */
+}
+
+.sessionTab {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Adjust as needed for space between sessions */
+}
+
+.sessionButton, .deleteButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.deleteButton {
+    padding-left: 10px; /* Space between session name and delete icon */
+}
+
+.deleteIcon {
+    width: 15px; /* Adjust size as needed */
+    height: 15px; /* Adjust size as needed */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+    .sessionTabsContainer {
+        flex-direction: column;
+    }
+
+    .addButton, .sessionTab {
+        margin-bottom: 10px;
+    }
+}
+
+
 /* 定义参数名称的样式 */
 .先验概率 {
   color: blue;

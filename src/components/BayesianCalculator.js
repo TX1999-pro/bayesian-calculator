@@ -130,31 +130,6 @@ function BayesianCalculator() {
                     {calculateTotalProbability().toFixed(4)}
                 </p>
             </div>
-            {/* <p>P(E) = P(E|H) × P(H) + P(E|H') × (1 - P(H))</p>
-                <p>
-                    {'       '}
-                    = {likelihood.toFixed(4)} × {prior.toFixed(4)} + {falseLikelihood.toFixed(4)} × {(1 - prior).toFixed(4)}
-
-                </p>
-                <p>
-                    {'       '}
-                    = {calculateTotalProbability().toFixed(4)}
-                </p> */}
-            {/* <div>
-                <p>换一种表示方法就是:</p>
-                <p>
-                    <ProbabilityTerm label="P(E)" value={NaN} className="全概率" />
-                    =
-                    <ProbabilityTerm label="P(E|H)" value={likelihood} className="证据可能性" />
-                    <ProbabilityTerm label=" * P(H)" value={prior} className="先验概率" />
-                    <ProbabilityTerm label=" + P(E|H'))" value={falseLikelihood} className="证伪项" />
-                    {" x (1 - "}
-                    <ProbabilityTerm label="P(H)" value={NaN} className="先验概率" />
-                    {")"}
-                    <ProbabilityTerm label="" value={(falseLikelihood * (1 - prior)).toFixed(4)} />
-                    = {calculateTotalProbability().toFixed(4)}
-                </p>
-            </div> */}
             <h2>证据鉴别力 = 证据可能性 / 证据普遍性</h2>
             <p> 证据鉴别力 =
                 <ProbabilityTerm label="P(E|H)" value={NaN} className="证据可能性" />  {'/ '}
