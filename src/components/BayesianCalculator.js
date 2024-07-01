@@ -52,7 +52,6 @@ function BayesianCalculator() {
                     />
                     - 先验概率 P(H)
                 </label>
-
                 <br />
                 <label className="证据可能性">
                     <input
@@ -94,7 +93,7 @@ function BayesianCalculator() {
                         value={falseLikelihood}
                         min="0"
                         max="1"
-                        step="0.01"
+                        step="0.001"
                         onChange={handleInputChange(setFalseLikelihood)}
                     />
                     - 证伪项 P(E|H')
@@ -164,7 +163,7 @@ function BayesianCalculator() {
                 <ProbabilityTerm label="" value={likelihood} className="证据可能性" />  {'/ '}
                 <ProbabilityTerm label="" value={calculateTotalProbability().toFixed(4)} className="证据普遍性" />
                 =
-                <h2 className="result">{(likelihood / calculateTotalProbability()).toFixed(4)}</h2>
+                <h2 className="result">{(likelihood / calculateTotalProbability()).toPrecision(4)}</h2>
             </p>
             <h2>后验概率计算 = 先验概率 x （证据鉴别力）</h2>
             <p>
@@ -181,7 +180,7 @@ function BayesianCalculator() {
 
             </p>
             <h2> {' = '}
-                {calculatePosterior().toFixed(4)}
+                {calculatePosterior().toPrecision(4)}
             </h2>
         </div>
     );
